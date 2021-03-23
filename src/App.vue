@@ -1,28 +1,132 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Nav @showNav="isNavShown = !isNavShown; fixedScrolling();" @home="showHome()" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
+    <div class="content" :class="{rotated: isNavShown}">
+      <Home class="main" :class="{active: home}"/>
+      <About class="main" :class="{active: about}"/>
+      <Projects class="main" :class="{active: projects}"/>
+      <Contact class="main" :class="{active: contact}"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from './components/Nav.vue'
+import Home from './components/Home.vue'
+import About from './components/About.vue'
+import Projects from './components/Projects.vue'
+import Contact from './components/Contact.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Nav,
+    Home,
+    About,
+    Projects,
+    Contact,
+  },
+  data() {
+    return {
+      isNavShown: false,
+      home: true,
+      about: false,
+      projects: false,
+      contact: false,
+    }
+  },
+  methods: {
+    showHome() {
+      this.home = true;
+      this.about = false;
+      this.projects = false;
+      this.contact = false;
+
+      this.isNavShown = false;
+    },
+    showAbout() {
+      this.home = false;
+      this.about = true;
+      this.projects = false;
+      this.contact = false;
+      
+      this.isNavShown = false;
+    },
+    showProjects() {
+      this.home = false;
+      this.about = false;
+      this.projects = true;
+      this.contact = false;
+      
+      this.isNavShown = false;
+    },
+    showContact() {
+      this.home = false;
+      this.about = false;
+      this.projects = false;
+      this.contact = true;
+      
+      this.isNavShown = false;
+    },
+    fixedScrolling() {
+      //if the nav menu is shown then scroll to the top of the page and disabled scrolling, otherwise go back to normal scrolling
+      if (this.isNavShown) {
+        window.scroll(0,0);
+        document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+      } else {
+        document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
+@import "@/assets/styles/_variables.scss";
+* {
+  font-family: 'Roboto', sans-serif;
+  color: $main-font-color;
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: $menu-color;
+  max-width: 100vw;
+  z-index: 0;
+  scroll-behavior: smooth;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+}
+.content {
+  z-index: 2;
+  position: absolute;
+  max-width: 100vw;
+  height: 200vh;
+  top: 0;
+  background: $body-color;
+  padding: 7.5rem 10rem 0;
+
+
+  transition: transform 500ms ease-in-out;
+    transform-origin: top left;
+  &.rotated {
+    transform: rotate(-22deg);
+    border-left: .25rem solid $menu-color;
+  }
+
+  .main {
+    display: none;
+    visibility: hidden;
+    &.active {
+      display: block;
+      visibility: visible;
+    }
+  }
 }
 </style>
