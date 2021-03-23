@@ -72,9 +72,11 @@ export default {
       //if the nav menu is shown then scroll to the top of the page and disabled scrolling, otherwise go back to normal scrolling
       if (this.isNavShown) {
         window.scroll(0,0);
-        document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+        document.getElementsByTagName('html')[0].style.overflow = "hidden";
+        console.log(this.isNavShown)
       } else {
         document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+        console.log(this.isNavShown)
       }
     }
   }
@@ -90,11 +92,10 @@ export default {
 body,html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  max-height: 100vh;
+  overflow: hidden;
   background: $menu-color;
-  max-width: 100vw;
   z-index: 0;
-  scroll-behavior: smooth;
 }
 #app {
   -webkit-font-smoothing: antialiased;
@@ -106,18 +107,24 @@ body,html {
 .content {
   z-index: 2;
   position: absolute;
-  max-width: 100vw;
-  height: 200vh;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   background: $body-color;
-  padding: 7.5rem 10rem 0;
+  padding: 7.5rem 0 0 0;
 
+  overflow-y: scroll;
 
-  transition: transform 500ms ease-in-out;
-    transform-origin: top left;
+  transition: 
+  transform 500ms ease-in-out,
+  height 1000ms linear;
+  transform-origin: top left;
   &.rotated {
     transform: rotate(-22deg);
-    border-left: .25rem solid $menu-color;
+    transition: transform 500ms ease-in-out, height 200ms linear;
+    border-left: .25rem solid $navButton-color;
+    height: 160vh;
+    overflow-x: hidden;
   }
 
   .main {
