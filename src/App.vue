@@ -73,10 +73,8 @@ export default {
       if (this.isNavShown) {
         window.scroll(0,0);
         document.getElementsByTagName('html')[0].style.overflow = "hidden";
-        console.log(this.isNavShown)
       } else {
-        document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-        console.log(this.isNavShown)
+        document.getElementsByTagName('html')[0].style.overflow = "";
       }
     }
   }
@@ -108,22 +106,26 @@ body,html {
   z-index: 2;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
   background: $body-color;
   padding: 7.5rem 0 0 0;
 
-  overflow-y: scroll;
-
   transition: 
   transform 500ms ease-in-out,
-  height 1000ms linear;
+  height 1000ms linear,
+  border-left-width 500ms linear;
+
   transform-origin: top left;
+  
+  border-left: 0rem solid $navButton-color;
   &.rotated {
     transform: rotate(-22deg);
-    transition: transform 500ms ease-in-out, height 200ms linear;
-    border-left: .25rem solid $navButton-color;
-    height: 160vh;
+    transition: 
+    transform 500ms ease-in-out,
+    height 200ms linear;
+    border-left-width: .25rem;
+    height: 160%;
     overflow-x: hidden;
   }
 
