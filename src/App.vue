@@ -2,10 +2,10 @@
   <div id="app">
     <Nav @showNav="isNavShown = !isNavShown; fixedScrolling();" @home="showHome()" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
     <div class="content" :class="{rotated: isNavShown}">
-      <Home class="main" :class="{active: home}"/>
-      <About class="main" :class="{active: about}"/>
-      <Projects class="main" :class="{active: projects}"/>
-      <Contact class="main" :class="{active: contact}"/>
+      <Home class="main" :class="[home ? 'active' : 'inactive']" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
+      <About class="main" :class="[about ? 'active' : 'inactive']"/>
+      <Projects class="main" :class="[projects ? 'active' : 'inactive']"/>
+      <Contact class="main" :class="[contact ? 'active' : 'inactive']"/>
     </div>
   </div>
 </template>
@@ -73,10 +73,8 @@ export default {
       if (this.isNavShown) {
         window.scroll(0,0);
         document.getElementsByTagName('html')[0].style.overflow = "hidden";
-        console.log(this.isNavShown)
       } else {
-        document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-        console.log(this.isNavShown)
+        document.getElementsByTagName('html')[0].style.overflowY = "";
       }
     }
   }
@@ -111,28 +109,31 @@ body,html {
   height: 100vh;
   top: 0;
   background: $body-color;
-  padding: 7.5rem 0 0 0;
-
-  overflow-y: scroll;
+  overflow-y:auto;
+  overflow-x: hidden;
 
   transition: 
   transform 500ms ease-in-out,
-  height 1000ms linear;
+  height 2000ms linear;
   transform-origin: top left;
   &.rotated {
     transform: rotate(-22deg);
     transition: transform 500ms ease-in-out, height 200ms linear;
-    border-left: .25rem solid $navButton-color;
-    height: 160vh;
+    height: 200vh;
     overflow-x: hidden;
   }
 
   .main {
-    display: none;
-    visibility: hidden;
+    position: absolute;
+    width: 100vw;
+    transform-origin: left;
+    transition: opacity 500ms ease-in-out;
     &.active {
-      display: block;
-      visibility: visible;
+      opacity: 1;
+      transform-origin: right;
+    }
+    &.inactive {
+      opacity: 0;
     }
   }
 }

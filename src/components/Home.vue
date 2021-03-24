@@ -1,29 +1,56 @@
 <template>
     <div class="container">
         <div class="body">
-            <div class="col title">
-                <div class="card">
-                    <h1>James Blackman</h1>
-                    <h3>Font-End UI UX Developer</h3>
-                </div>
-                
-            </div>
-            <div class="col">
-                <div class="menu">
-                    <div class="triangle one">
-                        
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h1 class="title" style="white-space: pre;">
+                            <span class="letter">J</span>
+                            <span class="letter">a</span>
+                            <span class="letter">m</span>
+                            <span class="letter">e</span>
+                            <span class="letter">s </span>
+                            <span class="letter">B</span>
+                            <span class="letter">l</span>
+                            <span class="letter">a</span>
+                            <span class="letter">c</span>
+                            <span class="letter">k</span>
+                            <span class="letter">m</span>
+                            <span class="letter">a</span>
+                            <span class="letter">n</span>
+                        </h1>
+                        <h3>Font-End UI UX Developer</h3>
                     </div>
-                    <div class="row">
-                        <div class="triangle two">
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <ul class="list">
+                            <li><p @click="$emit('about')">About</p></li>
+                            <li><p @click="$emit('projects')">Projects</p></li>
+                            <li><p @click="$emit('contact')">Contact</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="about">
+                            <div class="img">
+                                <img src="@/assets/me.png" alt="James Blackman">
+                            </div>
+                            <p><span style="padding-left: 4rem;">Hi</span> my name is James Blackman, I have been coding since I was 10 years old. I love to make beautiful looking websites and would love to make you one too!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="resume">
                             
                         </div>
-                        <div class="triangle three">
-                            
-                        </div>
                     </div>
                 </div>
             </div>
-        
         </div>
     </div>
 </template>
@@ -36,64 +63,123 @@ export default {
 
 <style lang="scss" scoped>
     .body {
-        display: flex;
-        flex-direction: row;
-        place-items: center;
+        width: 100%;
         height: 100vh;
-
+        display: flex;
+        flex-direction: column;
         
-        .col {
-            height: 100%;
+        overflow-x: hidden;
+        .row {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 15rem;
-
-            .card {
-            font-size: 200%;
-            line-height: 1;
-            background: #d0c3bd;
-            padding: 5rem 10rem;
-            transform: skew(20deg);
-            h1, h3 {
-                transform: skew(-20deg);
+            flex-direction: row;
+            margin-bottom: 1rem;
+            &:first-child {
+                margin-top: auto;
             }
+            &:last-child {
+                margin-bottom: auto;
             }
 
-            .menu {
-                width: 400px;
-                height: 400px;
-            }
-
-            .row {
+            .col {
+                height: 100%;
                 display: flex;
-                flex-direction: row;
-            }
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
 
-            .triangle {
-                width: 0;
-                height: 0;
-                position: relative;
-                &.one {
-                    border-left: 200px solid transparent;
-                    border-right: 200px solid transparent;
-                    border-top: 150px solid red;
-                }
-                &.two {
-                    border-left: 200px solid transparent;
-                    border-right: 200px solid transparent;
-                    border-bottom: 150px solid black;
-                    transform: rotate(52.5deg);
-                }
-                &.three {
-                    border-left: 200px solid transparent;
-                    border-right: 200px solid transparent;
-                    border-bottom: 150px solid red;
-                    transform: rotate(-60deg);
+                .card {
+                    font-size: 2rem;
+                    line-height: 1;
+                    background: $card-color;
+                    width: 95%;
+                    height: 100%;
+                    padding: 2rem 0;
+                    border-radius: 0.25rem;
+                    
+                    text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+                    
+                    .list {
+                        
+                        list-style: none;
+                        padding: 0;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        li {
+                            font-weight: bold;
+                            text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
+                            line-height: 1.75;
+                            display: flex;
+                            justify-content: center;
+                            p {
+                                padding: 0;
+                                margin: 0;
+                                cursor: pointer;
+                                transition: 
+                                transform 150ms ease-in-out,
+                                text-shadow 150ms ease-in-out;
+                                &:hover {
+                                    transform: translate(-2.5px, -2.5px);
+                                    text-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, .8);
+                                }
+                            }
+                        }
+                    }
+                    .title {
+                        cursor: default;
+                        .letter {
+                            position: relative;
+                            transition: color 2000ms linear;
+                            &:hover {
+                                transition: filter 0ms linear;
+                                color: $menu-color;
+                            }
+                        }
+                    }
+                    .about {
+                        display: flex;
+                        padding-inline: 4rem;
+                        align-items: center;
+                        p {
+                            padding-inline: 2rem;
+                            line-height: 1.5;
+                            text-align: left;
+                        }
+                        .img {
+                            img {
+                                border-radius: 50%;
+                                width: 15rem;
+                            }
+                        }
+                    }
                 }
             }
+        }
+    }
+    @media screen and (max-width: 1080px) {
+        .body {
+            flex-direction: column;
+            height: 100%;
+            .row {
+                flex-direction: column;
+                height: 100%;
+                .col {
+                    flex-direction: row;
+                    width: 100vw;
+                    height: auto;
+                    margin-block: 1rem;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1600px) {
+        .about {
+            flex-direction: column;
         }
     }
 </style>
