@@ -1,33 +1,54 @@
 <template>
     <div class="container">
         <div class="body">
-            <div class="col title">
-                <div class="card">
-                    <h1 style="white-space: pre;">
-                        <span class="letter">J</span>
-                        <span class="letter">a</span>
-                        <span class="letter">m</span>
-                        <span class="letter">e</span>
-                        <span class="letter">s </span>
-                        <span class="letter">B</span>
-                        <span class="letter">l</span>
-                        <span class="letter">a</span>
-                        <span class="letter">c</span>
-                        <span class="letter">k</span>
-                        <span class="letter">m</span>
-                        <span class="letter">a</span>
-                        <span class="letter">n</span>
-                    </h1>
-                    <h3>Font-End UI UX Developer</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h1 class="title" style="white-space: pre;">
+                            <span class="letter">J</span>
+                            <span class="letter">a</span>
+                            <span class="letter">m</span>
+                            <span class="letter">e</span>
+                            <span class="letter">s </span>
+                            <span class="letter">B</span>
+                            <span class="letter">l</span>
+                            <span class="letter">a</span>
+                            <span class="letter">c</span>
+                            <span class="letter">k</span>
+                            <span class="letter">m</span>
+                            <span class="letter">a</span>
+                            <span class="letter">n</span>
+                        </h1>
+                        <h3>Front-End UI UX Developer</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <ul class="list">
+                            <li><p @click="$emit('about')">About</p></li>
+                            <li><p @click="$emit('projects')">Projects</p></li>
+                            <li><p @click="$emit('contact')">Contact</p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <ul class="list">
-                        <li>About Me</li>
-                        <li>See My Projects</li>
-                        <li>Get In Contact</li>
-                    </ul>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="about">
+                            <div class="img">
+                                <img src="@/assets/me.png" alt="James Blackman">
+                            </div>
+                            <p><span style="padding-left: 4rem;">Hi</span> my name is James Blackman, I have been coding since I was 10 years old. I love to make beautiful looking websites and would love to make you one too!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="resume">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,74 +63,140 @@ export default {
 
 <style lang="scss" scoped>
     .body {
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        place-items: center;
-        height: 100%;
-        overflow: hidden;
-        
-        .col {
+        flex-direction: column;
+        overflow-x: hidden;
+        padding-block: 2rem;
+        background: $body-color;
+        .row {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;    
-
-            font-size: 1.4rem;
-            .card {
-                line-height: 1;
-                background: $body-accent;
-                padding: 3rem 0;
-                width: 95%;
-                border-radius: 0.25rem;
-
-
-                text-shadow: .5rem .5rem 5px rgba(0, 0, 0, 0.175);
-
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                .list {
-                    list-style-type: none;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+            &:first-child {
+                margin-top: auto;
+            }
+            &:last-child {
+                margin-bottom: auto;
+            }
+            .col {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-inline: 0.5rem;
+                &:first-child {
+                    margin-left: 1rem;
+                }
+                &:last-child {
+                    margin-right: 1rem;
+                }
+                .card {
+                    font-size: 2rem;
+                    line-height: 1;
+                    background: $card-color;
                     width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-                    line-height: 1.5;
-                    li {
-                        cursor: pointer;
-                        transition: 
-                        transform 150ms ease-in-out,
-                        text-shadow 150ms ease-in-out;
-                        &:hover {
-
-                            text-shadow: .75rem .75rem 5px rgba(0, 0, 0, 0.1);
-                            transform: translate(-.25rem, -.25rem);
+                    height: 100%;
+                    padding: 2rem 0;
+                    border-radius: 0.25rem;
+                    
+                    text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+                    
+                    .list {
+                        
+                        list-style: none;
+                        padding: 0;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        li {
+                            font-weight: bold;
+                            text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
+                            line-height: 1.75;
+                            display: flex;
+                            justify-content: center;
+                            p {
+                                padding: 0;
+                                margin: 0;
+                                cursor: pointer;
+                                transition: 
+                                transform 150ms ease-in-out,
+                                text-shadow 150ms ease-in-out;
+                                &:hover {
+                                    transform: translate(-2.5px, -2.5px);
+                                    text-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, .8);
+                                }
+                            }
                         }
                     }
-                }
-                .letter {
-                    position: relative;
-                    transition: filter 2000ms linear;
-                    &:hover {
-                        transition: filter 0ms linear;
-                        filter: brightness(1.75);                        cursor: default;
+                    .title {
+                        cursor: default;
+                        .letter {
+                            position: relative;
+                            transition: color 2000ms linear;
+                            font-size: 4rem;
+                            &:hover {
+                                transition: filter 0ms linear;
+                                color: $menu-color;
+                            }
+                        }
+                    }
+                    .about {
+                        display: flex;
+                        padding-inline: 4rem;
+                        align-items: center;
+                        p {
+                            padding-inline: 2rem;
+                            line-height: 1.5;
+                            text-align: left;
+                        }
+                        .img {
+                            img {
+                                border-radius: 50%;
+                                width: 15rem;
+                            }
+                        }
                     }
                 }
             }
         }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1080px) {
         .body {
             flex-direction: column;
-        }
-        .card {
-            margin-block: 1rem;
-            &:first-child {
-                margin-top: 0.5rem;
+            height: 100%;
+            padding-top: 8rem;
+            .row {
+                flex-direction: column;
+                height: 100%;
+                margin-inline: 1rem;
+                margin-bottom: 0;
+                .col {
+                    flex-direction: row;
+                    width: 100%;
+                    height: auto;
+                    margin-inline: 0rem;
+                    &:first-child {
+                        margin-left: 0rem;
+                    }
+                    &:last-child {
+                        margin-right: 0rem;
+                    }
+                    margin-block: 1rem;
+                    .card .title {
+                        font-size: 3rem;
+                    }
+                }
             }
-            padding: 0;
+        }
+    }
+    @media screen and (max-width: 1600px) {
+        .about {
+            flex-direction: column;
         }
     }
 </style>

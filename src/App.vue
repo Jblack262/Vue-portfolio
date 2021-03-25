@@ -2,10 +2,10 @@
   <div id="app">
     <Nav @showNav="isNavShown = !isNavShown; fixedScrolling();" @home="showHome()" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
     <div class="content" :class="{rotated: isNavShown}">
-      <Home class="main" :class="{active: home}"/>
-      <About class="main" :class="{active: about}"/>
-      <Projects class="main" :class="{active: projects}"/>
-      <Contact class="main" :class="{active: contact}"/>
+      <Home class="main" :class="[home ? 'active' : 'inactive']" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
+      <About class="main" :class="[about ? 'active' : 'inactive']"/>
+      <Projects class="main" :class="[projects ? 'active' : 'inactive']"/>
+      <Contact class="main" :class="[contact ? 'active' : 'inactive']"/>
     </div>
   </div>
 </template>
@@ -16,7 +16,6 @@ import Home from './components/Home.vue'
 import About from './components/About.vue'
 import Projects from './components/Projects.vue'
 import Contact from './components/Contact.vue'
-
 export default {
   name: 'App',
   components: {
@@ -41,7 +40,6 @@ export default {
       this.about = false;
       this.projects = false;
       this.contact = false;
-
       this.isNavShown = false;
     },
     showAbout() {
@@ -74,7 +72,7 @@ export default {
         window.scroll(0,0);
         document.getElementsByTagName('html')[0].style.overflow = "hidden";
       } else {
-        document.getElementsByTagName('html')[0].style.overflow = "";
+        document.getElementsByTagName('html')[0].style.overflowY = "";
       }
     }
   }
@@ -106,35 +104,33 @@ body,html {
   z-index: 2;
   position: absolute;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   top: 0;
-  background: $body-color;
-  padding: 7.5rem 0 0 0;
-
+  background: $menu-color;
+  overflow-y:hidden;
+  overflow-x: hidden;
   transition: 
   transform 500ms ease-in-out,
-  height 1000ms linear,
-  border-left-width 500ms linear;
-
+  height 2000ms linear;
   transform-origin: top left;
-  
-  border-left: 0rem solid $navButton-color;
+  overflow-y: auto;
   &.rotated {
     transform: rotate(-22deg);
-    transition: 
-    transform 500ms ease-in-out,
-    height 200ms linear;
-    border-left-width: .25rem;
-    height: 160%;
+    transition: transform 500ms ease-in-out, height 200ms linear;
+    height: 200vh;
     overflow-x: hidden;
   }
-
   .main {
-    display: none;
-    visibility: hidden;
+    position: absolute;
+    width: 100vw;
+    transform-origin: left;
+    transition: opacity 500ms ease-in-out;
     &.active {
-      display: block;
-      visibility: visible;
+      opacity: 1;
+      transform-origin: right;
+    }
+    &.inactive {
+      opacity: 0;
     }
   }
 }

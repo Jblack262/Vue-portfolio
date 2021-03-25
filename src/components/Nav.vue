@@ -46,13 +46,14 @@ export default {
         z-index: 3;
         width: 15rem;
         height: 15rem;
-        background: $navButton-color;
+        background: $primary-dark;
         position: fixed;
         border-radius: 50%;
         left: -7.5rem;
         top: -7.5rem;
         transition: transform 500ms ease-in-out;
         transform-origin: center;
+        border: .25rem solid $card-color;
         &.navShown {
             transform: rotate(-90deg);
         }
@@ -74,7 +75,7 @@ export default {
             right: 0;
             bottom: 0;
             i {
-                color: $menu-font-color;
+                color: $main-font-color;
                 margin-right: 1.5rem;
                 margin-bottom: 1.5rem;
                 cursor: pointer;
@@ -87,7 +88,6 @@ export default {
         transition: left 500ms ease-in-out;
         left: 0rem;
         &.showMenu {
-            /*z-index: -1;*/
             left: -10rem;
         }
         position: absolute;
