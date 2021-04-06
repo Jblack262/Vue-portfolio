@@ -101,28 +101,25 @@ body,html {
   padding: 0;
 }
 .content {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
   z-index: 2;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   background: $menu-color;
-  overflow-y:hidden;
   overflow-x: hidden;
   transition: 
-  transform 500ms ease-in-out,
-  height 2000ms linear;
+  transform 500ms ease-in-out;
   transform-origin: top left;
   overflow-y: auto;
   &.rotated {
     transform: rotate(-22deg);
-    transition: transform 500ms ease-in-out, height 200ms linear;
-    height: 200vh;
     overflow-x: hidden;
   }
   .main {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     transform-origin: left;
     transition: opacity 500ms ease-in-out;
     &.active {

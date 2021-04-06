@@ -84,6 +84,7 @@ export default {
         }
     }
     .menu {
+        width: 20rem;
         z-index: 2;
         transition: left 500ms ease-in-out;
         left: 0rem;
@@ -102,14 +103,23 @@ export default {
                p {
                     color: $menu-font-color;
                     cursor: pointer;
-                    width: 100vw;
+                    width: 100%;
+                    position: relative;
                     &::after {
                         content: '';
                         position: absolute;
-                        width: 100vw;
+                        width: 100%;
                         height: 3rem;
-                        left: 0;
-                        border-block: .25rem solid rgba(0,0,0,0.6);
+                        left: -1rem;
+
+                        border-width: 3px;
+                        border-style: solid;
+                        border-image: 
+                            linear-gradient(
+                            to bottom, 
+                            red, 
+                            rgba(0, 0, 0, 0)
+                            ) 2 100%;
 
                         transition: transform 800ms ease-in;
                         transform-origin: top right;

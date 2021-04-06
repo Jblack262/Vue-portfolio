@@ -5,19 +5,24 @@
                 <div class="col">
                     <div class="card">
                         <h1 class="title" style="white-space: pre;">
-                            <span class="letter">J</span>
-                            <span class="letter">a</span>
-                            <span class="letter">m</span>
-                            <span class="letter">e</span>
-                            <span class="letter">s </span>
-                            <span class="letter">B</span>
-                            <span class="letter">l</span>
-                            <span class="letter">a</span>
-                            <span class="letter">c</span>
-                            <span class="letter">k</span>
-                            <span class="letter">m</span>
-                            <span class="letter">a</span>
-                            <span class="letter">n</span>
+                            <div class="james">
+                                <span class="letter">J</span>
+                                <span class="letter">a</span>
+                                <span class="letter">m</span>
+                                <span class="letter">e</span>
+                                <span class="letter">s </span>
+                            </div>
+                            <div class="blackman">
+                                <span class="letter">B</span>
+                                <span class="letter">l</span>
+                                <span class="letter">a</span>
+                                <span class="letter">c</span>
+                                <span class="letter">k</span>
+                                <span class="letter">m</span>
+                                <span class="letter">a</span>
+                                <span class="letter">n</span>
+                            </div>
+                            
                         </h1>
                         <h3>Front-End UI UX Developer</h3>
                     </div>
@@ -64,6 +69,7 @@ export default {
 <style lang="scss" scoped>
     .body {
         width: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         overflow-x: hidden;
@@ -81,7 +87,6 @@ export default {
                 margin-bottom: auto;
             }
             .col {
-                height: 100%;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
@@ -103,9 +108,7 @@ export default {
                     
                     text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-                    
-                    .list {
-                        
+                    .list {        
                         list-style: none;
                         padding: 0;
                         height: 100%;
@@ -135,10 +138,11 @@ export default {
                     }
                     .title {
                         cursor: default;
+                        display: flex;
+                        justify-content: center;
                         .letter {
                             position: relative;
                             transition: color 2000ms linear;
-                            font-size: 4rem;
                             &:hover {
                                 transition: filter 0ms linear;
                                 color: $menu-color;
@@ -147,10 +151,10 @@ export default {
                     }
                     .about {
                         display: flex;
-                        padding-inline: 4rem;
+                        padding: 2rem;
                         align-items: center;
                         p {
-                            padding-inline: 2rem;
+                            padding: 0 2rem;
                             line-height: 1.5;
                             text-align: left;
                         }
@@ -178,7 +182,6 @@ export default {
                 .col {
                     flex-direction: row;
                     width: 100%;
-                    height: auto;
                     margin-inline: 0rem;
                     &:first-child {
                         margin-left: 0rem;
@@ -196,6 +199,20 @@ export default {
     }
     @media screen and (max-width: 1600px) {
         .about {
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .card .about {
+            padding: 2rem 0;
+            font-size: 90%;
+        }
+    }
+    @media screen and (max-width: 440px) {
+        .title {
+            flex-direction: column;
+        }
+        .list {
             flex-direction: column;
         }
     }
