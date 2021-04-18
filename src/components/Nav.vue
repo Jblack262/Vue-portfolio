@@ -112,16 +112,14 @@ export default {
                         height: 3rem;
                         left: -1rem;
 
-                        border-width: 3px;
-                        border-style: solid;
-                        border-image: 
-                            linear-gradient(
-                            to bottom, 
-                            red, 
-                            rgba(0, 0, 0, 0)
-                            ) 2 100%;
 
-                        transition: transform 800ms ease-in;
+                        border: 10px solid;
+                        border-image-slice: 1;
+                        border-width: 5px;
+                        border-image-source: linear-gradient(to left, $menu-color, $card-color);
+                        border-inline: none;
+
+                        transition: transform 200ms ease-in;
                         transform-origin: top right;
                         transform: scaleX(0);
                     }

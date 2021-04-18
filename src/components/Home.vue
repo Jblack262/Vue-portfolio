@@ -145,7 +145,7 @@ export default {
                             transition: color 2000ms linear;
                             &:hover {
                                 transition: filter 0ms linear;
-                                color: $menu-color;
+                                color: $highlight-color;
                             }
                         }
                     }
