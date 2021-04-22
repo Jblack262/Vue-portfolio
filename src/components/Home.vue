@@ -7,10 +7,7 @@
                         <h1 class="title" style="white-space: pre;">
                             <div class="james">
                                 <span class="letter">J</span>
-                                <span class="letter">a</span>
-                                <span class="letter">m</span>
-                                <span class="letter">e</span>
-                                <span class="letter">s </span>
+                                <span class="letter">D </span>
                             </div>
                             <div class="blackman">
                                 <span class="letter">B</span>
@@ -50,9 +47,26 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <div class="resume">
-                            
-                        </div>
+                        <ul class="resume">
+                            <li>
+                                <ul>
+                                    <li>Assistant Facilities Manager</li>
+                                    <li>New Life Community Church</li>
+                                    <li>May, 2019 - Present</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>FBLA Coding and Programming State Competition</li>
+                                    <li>3rd Place</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>West-Mec Coding Student</li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -108,8 +122,7 @@ export default {
                     
                     text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-                    .list {        
-                        list-style: none;
+                    .list {
                         padding: 0;
                         height: 100%;
                         margin: 0;
@@ -128,12 +141,30 @@ export default {
                                 cursor: pointer;
                                 transition: 
                                 transform 150ms ease-in-out,
-                                text-shadow 150ms ease-in-out;
+                                text-shadow 150ms ease-in-out,
+                                color 150ms ease-in-out;
                                 &:hover {
                                     transform: translate(-2.5px, -2.5px);
                                     text-shadow: 7.5px 7.5px 7.5px rgba(0, 0, 0, .8);
+                                    color: $highlight-color;
                                 }
                             }
+                        }
+                    }
+                    .resume {
+                        list-style: none;
+                        padding: 0;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        li {
+                            font-size: 1.6rem;
+                            text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
+                            line-height: 1.5;
+                            text-align: left;
+                            margin: 0;
                         }
                     }
                     .title {
@@ -142,10 +173,12 @@ export default {
                         justify-content: center;
                         .letter {
                             position: relative;
-                            transition: color 2000ms linear;
+                            bottom: 0rem;
+                            transition: color 1000ms linear, bottom 100ms linear;
                             &:hover {
-                                transition: filter 0ms linear;
+                                transition: filter 0ms linear, bottom 100ms linear;
                                 color: $highlight-color;
+                                bottom: 0.25rem;
                             }
                         }
                     }
@@ -169,7 +202,7 @@ export default {
             }
         }
     }
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1530px) {
         .body {
             flex-direction: column;
             height: 100%;
@@ -190,8 +223,10 @@ export default {
                         margin-right: 0rem;
                     }
                     margin-block: 1rem;
-                    .card .title {
-                        font-size: 3rem;
+                    .card {
+                        .title {
+                            font-size: 3rem;
+                        }
                     }
                 }
             }
@@ -203,9 +238,20 @@ export default {
         }
     }
     @media screen and (max-width: 768px) {
-        .card .about {
-            padding: 2rem 0;
-            font-size: 90%;
+        .card {
+            .resume {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    ul {
+                    margin: 1rem 0;
+                    }
+                }
+            }
+            .about {
+                padding: 2rem 0;
+                font-size: 90%;
+            }
         }
     }
     @media screen and (max-width: 440px) {

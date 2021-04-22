@@ -75,7 +75,7 @@ export default {
             right: 0;
             bottom: 0;
             i {
-                color: $main-font-color;
+                color: $menu-font-color;
                 margin-right: 1.5rem;
                 margin-bottom: 1.5rem;
                 cursor: pointer;

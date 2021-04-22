@@ -123,10 +123,12 @@ body,html {
     transform-origin: left;
     transition: opacity 500ms ease-in-out;
     &.active {
+      z-index: 999;
       opacity: 1;
       transform-origin: right;
     }
     &.inactive {
+      z-index: -1;
       opacity: 0;
     }
   }
