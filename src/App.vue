@@ -5,7 +5,7 @@
       <Home class="main" :class="[home ? 'active' : 'inactive']" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
       <About class="main" :class="[about ? 'active' : 'inactive']"/>
       <Projects class="main" :class="[projects ? 'active' : 'inactive']"/>
-      <Contact class="main" :class="[contact ? 'active' : 'inactive']"/>
+      <Contact class="main" :class="[contact ? 'active' : 'inactive']" @home="showHome()"/>
     </div>
   </div>
 </template>

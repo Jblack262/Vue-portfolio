@@ -206,7 +206,7 @@ export default {
         .body {
             flex-direction: column;
             height: 100%;
-            padding-top: 8rem;
+            padding: 8rem 0 8rem;
             .row {
                 flex-direction: column;
                 height: 100%;

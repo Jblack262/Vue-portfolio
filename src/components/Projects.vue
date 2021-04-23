@@ -4,46 +4,71 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <ul>
-                            <li>https://jblack262.github.io/group-bootstrap-website/</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <ul>
-                            <li>https://nlvya.github.io/sorting-algorithm/</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <ul>
-                            <li>https://jblack262.github.io/Car-Website/</li>
-                        </ul>
+                        <h1>My Projects</h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <ul>
-                            <li>https://jblack262.github.io/jQuery-WestMec-Page/</li>
-                        </ul>
+                        <div class="websiteCard">
+                            <p>Nintendo Side-scroller</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website1.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <ul>
-                            <li>https://jblack262.github.io/Gallery-Website-Add-on-Project/</li>
-                        </ul>
+                        <div class="websiteCard">
+                            <p>Sorting Algorithm</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website2.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <ul>
-                            <li>https://roswal213.github.io/Unit-Group-Project/</li>
-                        </ul>
+                        <div class="websiteCard">
+                            <p>Model Car Store</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website3.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="websiteCard">
+                            <p>West-MEC Homepage</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website4.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="websiteCard">
+                            <p>Cheez-it fan page</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website5.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="websiteCard">
+                            <p>Pool Building Business</p>
+                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                                <img src="@/assets/websiteThumbnails/website6.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,11 +124,19 @@ export default {
                     
                     text-shadow: 5px 5px 7.5px rgba(0, 0, 0, .9);
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+                    .websiteCard {
+                        p {
+                            margin-top: 0;
+                        }
+                        img {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
     }
-    @media screen and (max-width: 1530px) {
+    @media screen and (max-width: 1180px) {
         .body {
             flex-direction: column;
             height: 100%;
@@ -124,6 +157,9 @@ export default {
                         margin-right: 0rem;
                     }
                     margin-block: 1rem;
+                    .card {
+                        font-size: 4vw;
+                    }
                 }
             }
         }
