@@ -116,7 +116,7 @@ export default {
                         border: 10px solid;
                         border-image-slice: 1;
                         border-width: 5px;
-                        border-image-source: linear-gradient(to left, $menu-color, $card-color);
+                        border-image-source: linear-gradient(to left, $menu-color, $highlight-color);
                         border-inline: none;
 
                         transition: transform 200ms ease-in;

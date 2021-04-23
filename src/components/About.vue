@@ -4,6 +4,21 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
+                        <div class="header">
+                            <img src="@/assets/me.png" class="meImg">
+                            <div class="personalInfo">
+                                <h4>JD Blackman</h4>
+                                <h4>JBlack262@west-mec.org</h4>
+                                <h4>123-456-7890</h4>
+                            </div>
+                        </div>
+                        <p class="description">Dedicated, Efficient, first year Coding student who is able to work quickly and able to think critically, seeking the position of Front-End UI/UX Developer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
                         <ul class="education">
                             <div>
                                 <h3>West-MEC Coding Program</h3>
@@ -30,6 +45,18 @@
                                 <p>I excelled in mathematics and science, took computer science classes as well as 3 Engineering courses. </p>
                                 <p></p>
                             </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <ul class="skills">
+                            <li>Able to implement the steps in the System Development Life Cycle (e.g. planning, analysis, design, developments, testing, implementation, maintenance)</li>
+                            <li>Ability to develop program requirements/specifications and a testing plan (e.g. user stories, automated testing, test procedures)</li>
+                            <li>Understands the process of decomposing a large programming problem into smaller, more manageable procedures</li>
+                            <li>Knowledge of problem-solving and troubleshooting strategies applicable to software development</li>
                         </ul>
                     </div>
                 </div>
@@ -98,6 +125,33 @@ export default {
                                 font-size: 1.75rem;
                                 margin: 1rem;
                             }
+                        }
+                    }
+                    .header {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        .meImg {
+                            width: 10rem;
+                            height: 10rem;
+                            border-radius: 50%;
+                            margin: 1rem;
+                        }
+                        .personalInfo {
+                            h4 {
+                                margin: 1.5rem 1rem;
+                            }
+                        }
+                    }
+                    .description {
+                        margin: 0 10vw;
+                        font-size: 1.75rem;
+                    }
+                    .skills {
+                        text-align: left;
+                        li {
+                            margin: .75rem 0;
+                            font-size: 1.5rem;
                         }
                     }
                 }
