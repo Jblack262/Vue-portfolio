@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav @showNav="isNavShown = !isNavShown; fixedScrolling();" @home="showHome()" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
-    <div class="content" :class="{rotated: isNavShown}">
+    <div class="content" :class="{rotated: isNavShown}" v-on:scroll="handleScroll">
       <Home class="main" :class="[home ? 'active' : 'inactive']" @about="showAbout()" @projects="showProjects()" @contact="showContact()"/>
       <About class="main" :class="[about ? 'active' : 'inactive']"/>
       <Projects class="main" :class="[projects ? 'active' : 'inactive']"/>
@@ -66,6 +66,14 @@ export default {
       
       this.isNavShown = false;
     },
+    handleScroll() {
+      const content = document.querySelector('.content');
+      if (content.scrollTop != 0) { //if you have scrolled down from the top of the page at all the nav-button will be transparent
+        document.getElementById("nav-button").style.opacity = "0.8"
+      } else {
+        document.getElementById("nav-button").style.opacity = "1"
+      }
+    },
     fixedScrolling() {
       //if the nav menu is shown then scroll to the top of the page and disabled scrolling, otherwise go back to normal scrolling
       if (this.isNavShown) {
@@ -128,6 +136,7 @@ body,html {
       transform-origin: right;
     }
     &.inactive {
+      display: none;
       z-index: -1;
       opacity: 0;
     }

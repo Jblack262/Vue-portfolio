@@ -1,6 +1,6 @@
 <template>
     <div class="nav">
-        <nav class="nav-button" :class="{navShown: showNav}">
+        <nav class="nav-button" id="nav-button" :class="{navShown: showNav}">
             <div class="container">
                 <i @click="showMenu()" class="material-icons">menu</i>
             </div>
@@ -31,6 +31,9 @@ export default {
         showMenu() {
             this.showNav = !this.showNav
             this.$emit('showNav')
+        },
+        handleScroll() {
+            console.log("pleae")
         }
     },
 }

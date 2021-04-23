@@ -183,4 +183,12 @@ export default {
             }
         }
     }
+    @media screen and (max-width: 460px) {
+        .info {
+            flex-direction: column;
+        }
+        .header {
+            flex-direction: column;
+        }
+    }
 </style>

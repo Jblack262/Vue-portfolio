@@ -4,12 +4,46 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        
+                        <ul>
+                            <li>https://jblack262.github.io/group-bootstrap-website/</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        
+                        <ul>
+                            <li>https://nlvya.github.io/sorting-algorithm/</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <ul>
+                            <li>https://jblack262.github.io/Car-Website/</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <ul>
+                            <li>https://jblack262.github.io/jQuery-WestMec-Page/</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <ul>
+                            <li>https://jblack262.github.io/Gallery-Website-Add-on-Project/</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <ul>
+                            <li>https://roswal213.github.io/Unit-Group-Project/</li>
+                        </ul>
                     </div>
                 </div>
             </div>
