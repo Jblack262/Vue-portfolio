@@ -23,7 +23,7 @@
                     <div class="card">
                         <div class="websiteCard">
                             <p>Sorting Algorithm</p>
-                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                            <a href="https://nlvya.github.io/sorting-algorithm/" target="_blank">
                                 <img src="@/assets/websiteThumbnails/website2.png">
                             </a>
                         </div>
@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="websiteCard">
                             <p>Model Car Store</p>
-                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                            <a href="https://jblack262.github.io/Car-Website/" target="_blank">
                                 <img src="@/assets/websiteThumbnails/website3.png">
                             </a>
                         </div>
@@ -45,7 +45,7 @@
                     <div class="card">
                         <div class="websiteCard">
                             <p>West-MEC Homepage</p>
-                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                            <a href="https://jblack262.github.io/jQuery-WestMec-Page/" target="_blank">
                                 <img src="@/assets/websiteThumbnails/website4.png">
                             </a>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="card">
                         <div class="websiteCard">
                             <p>Cheez-it fan page</p>
-                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                            <a href="https://jblack262.github.io/Gallery-Website-Add-on-Project/" target="_blank">
                                 <img src="@/assets/websiteThumbnails/website5.png">
                             </a>
                         </div>
@@ -65,7 +65,7 @@
                     <div class="card">
                         <div class="websiteCard">
                             <p>Pool Building Business</p>
-                            <a href="https://jblack262.github.io/group-bootstrap-website/" target="_blank">
+                            <a href="https://roswal213.github.io/Unit-Group-Project/" target="_blank">
                                 <img src="@/assets/websiteThumbnails/website6.png">
                             </a>
                         </div>

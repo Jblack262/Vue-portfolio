@@ -13,10 +13,10 @@
                     <div class="card">
                         <h4>Socials</h4>
                         <div class="socials">
-                            <a href=""><i class="fa fa-linkedin-square" style="font-size:128px"></i></a>
-                            <a href=""><i class="fa fa-github-square" style="font-size:128px"></i></a>
-                            <a href=""><i class="fa fa-twitter-square" style="font-size:128px"></i></a>
-                            <a href=""><i class="fa fa-facebook-square" style="font-size:128px"></i></a>
+                            <a href="#"><i class="fa fa-linkedin-square" style="font-size:128px"></i></a>
+                            <a href="#"><i class="fa fa-github-square" style="font-size:128px"></i></a>
+                            <a href="#"><i class="fa fa-twitter-square" style="font-size:128px"></i></a>
+                            <a href="#"><i class="fa fa-facebook-square" style="font-size:128px"></i></a>
                         </div>
                         <h4>Get in contact.</h4>
                     </div>
@@ -27,17 +27,17 @@
                         <form class="contact-form" @submit="sendEmail">
                             <div class="input">
                                 <label>Name:</label>
-                                <input type="text" name="user_name" required>
+                                <input type="text" name="user_name" v-model="from_name" required>
                             </div>
                             <div class="input">
                                 <label>Email:</label>
-                                <input type="email" name="user_email" required>
+                                <input type="email" name="user_email" v-model="reply_to" required>
                             </div>
                             <div class="input">
                                 <label>Message:</label>
                             </div>
                             <div class="input">
-                                <textarea name="message" required></textarea>
+                                <textarea name="message" v-model="message" required></textarea>
                             </div>
                             <input type="submit" value="Send" @submit="console.log('helloWorld')">
                         </form>
@@ -51,6 +51,13 @@
 <script>
 import emailjs from 'emailjs-com';
 export default {
+    data() {
+        return {
+            message: '',
+            reply_to: '',
+            from_name: '',
+        }
+    },
     methods: {
         sendEmail: (e) => {
         emailjs.sendForm('service_tiq404a', 'template_knsskrs', e.target, 'user_6Uq2T5FnmqhSgTyWUcJQw')
